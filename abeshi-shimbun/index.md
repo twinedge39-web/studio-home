@@ -1,2 +1,2 @@
 # ABESHI-SHIMBUN
-- [No00](sample.pdf)
+- [No00](abeSHI_NEWS00rev2.pdf)
