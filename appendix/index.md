@@ -1,2 +1,2 @@
 # Appendix
-- [appendix/matome_iphone.md](matome_iphone.md)
+- [暫定iPhone文書作成](matome_iphone.md)
