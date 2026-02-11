@@ -13,7 +13,7 @@ This repository is used as a sandbox for future setup.
 - [Appendix / 付録](appendix/)
 - [阿部氏ニュース](abeshi-shimbun/)
 - [Web site (Webnode)](https://a-so-fun.webnode.jp/)
-- [システムサンプル（汎用）](appendix/)
+- [システムサンプル（汎用）](System_Sample/)
 
 ---
 
@@ -26,6 +26,7 @@ Status:
 - Purpose: entry point / test
 
 Last updated: 2026-02
+
 
 
 
