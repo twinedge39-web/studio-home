@@ -1,2 +1,2 @@
 # Appendix
-- [暫定まとめ：iPhoneでの文書作成／書類作成法（2026版）.md](# 暫定まとめ：iPhoneでの文書作成／書類作成法（2026版）.md)
+- [appendix/matome_iphone.md](appendix/matome_iphone.md)
