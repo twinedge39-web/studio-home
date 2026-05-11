@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Studio Home</title>
+  <style>
+    :root {
+      --ink: #22313a;
+      --muted: #61717b;
+      --line: #d8e8ec;
+      --paper: #fbfdfb;
+      --sky: #eaf8ff;
+      --blue: #3ba7d9;
+      --green: #70b866;
+      --sun: #f4d35e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+      background:
+        linear-gradient(180deg, rgba(234, 248, 255, 0.92), rgba(251, 253, 251, 0.96) 48%),
+        var(--paper);
+    }
+
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0 56px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
+      gap: 28px;
+      align-items: center;
+      min-height: 72vh;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 34rem;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .hero img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border: 1px solid rgba(216, 232, 236, 0.9);
+      border-radius: 8px;
+      box-shadow: 0 18px 44px rgba(34, 49, 58, 0.14);
+    }
+
+    .contents {
+      padding: 28px 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 1rem;
+      color: var(--muted);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .links a {
+      display: block;
+      min-height: 86px;
+      padding: 18px;
+      color: inherit;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .links a:hover,
+    .links a:focus-visible {
+      border-color: rgba(59, 167, 217, 0.7);
+      box-shadow: 0 10px 26px rgba(59, 167, 217, 0.12);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .label {
+      display: block;
+      font-weight: 700;
+    }
+
+    .note {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    footer {
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 720px) {
+      main {
+        width: min(100% - 24px, 560px);
+        padding-top: 28px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero img {
+        max-height: 360px;
+      }
+
+      .links {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" aria-labelledby="site-title">
+      <div>
+        <h1 id="site-title">Studio Home</h1>
+        <p class="lead">A simple public entry point for notes, samples, and related contents.</p>
+      </div>
+      <img src="assets/watercolor-field.jpg" alt="Watercolor landscape from abeSHI NEWS">
+    </section>
+
+    <section class="contents" aria-labelledby="contents-title">
+      <h2 id="contents-title">Contents</h2>
+      <ul class="links">
+        <li>
+          <a href="appendix/">
+            <span class="label">Appendix / 付録</span>
+            <span class="note">Reference notes and supporting material.</span>
+          </a>
+        </li>
+        <li>
+          <a href="abeshi-shimbun/">
+            <span class="label">阿部氏ニュース</span>
+            <span class="note">News-style experimental content.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://a-so-fun.webnode.jp/">
+            <span class="label">Web site (Webnode)</span>
+            <span class="note">External website.</span>
+          </a>
+        </li>
+        <li>
+          <a href="System_Sample/">
+            <span class="label">システムサンプル（汎用）</span>
+            <span class="note">General system sample.</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      Last updated: 2026-05
+    </footer>
+  </main>
+</body>
+</html>
