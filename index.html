@@ -44,13 +44,24 @@
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
       gap: 28px;
-      align-items: center;
+      align-items: start;
       min-height: 72vh;
+      padding-top: 12vh;
     }
 
     .hero > div {
       padding: 28px;
       background: transparent;
+    }
+
+    .clock {
+      margin: 0 0 14px;
+      color: rgba(248, 251, 253, 0.86);
+      font-family: "Consolas", "SFMono-Regular", "Roboto Mono", monospace;
+      font-size: clamp(1rem, 3vw, 1.35rem);
+      letter-spacing: 0.08em;
+      text-align: right;
+      width: min(100%, 640px);
     }
 
     .hero .logo {
@@ -59,6 +70,7 @@
       height: auto;
       aspect-ratio: auto;
       object-fit: contain;
+      opacity: 0.5;
       border: 1px solid rgba(191, 211, 220, 0.5);
       border-radius: 8px;
       box-shadow: 0 18px 48px rgba(0, 0, 0, 0.2);
@@ -160,6 +172,7 @@
       .hero {
         grid-template-columns: 1fr;
         min-height: auto;
+        padding-top: 0;
         margin-bottom: 44px;
       }
 
@@ -186,9 +199,10 @@
   <main>
     <section class="hero" aria-labelledby="site-title">
       <div>
+        <p class="clock" id="clock" aria-label="Current date and time">----/--/-- --:--:--</p>
         <img class="logo" id="site-title" src="assets/logo-studio-web.jpg" alt="Studio Home - A simple public entry point for notes, samples, and related contents.">
       </div>
-      <img src="assets/hero-field-day.jpg" alt="Sunny meadow landscape">
+      <img id="hero-image" src="assets/nft-hero-01.webp" alt="Rotating studio image">
     </section>
 
     <section class="contents" aria-labelledby="contents-title">
@@ -225,5 +239,48 @@
       Last updated: 2026-05
     </footer>
   </main>
+  <script>
+    const clock = document.getElementById("clock");
+    const heroImage = document.getElementById("hero-image");
+    const heroImages = [
+      "assets/nft-hero-01.webp",
+      "assets/gitty-hero-01.webp",
+      "assets/nft-hero-02.webp",
+      "assets/gitty-hero-02.webp",
+      "assets/nft-hero-03.webp",
+      "assets/gitty-hero-03.webp",
+      "assets/nft-hero-04.webp",
+      "assets/gitty-hero-04.webp",
+      "assets/nft-hero-05.webp",
+      "assets/gitty-hero-05.webp",
+      "assets/nft-hero-06.webp",
+      "assets/gitty-hero-06.webp"
+    ];
+
+    function updateHeroImage() {
+      const index = new Date().getHours() % heroImages.length;
+      heroImage.src = heroImages[index];
+    }
+
+    function updateClock() {
+      const now = new Date();
+      const date = now.toLocaleDateString("ja-JP", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+      });
+      const time = now.toLocaleTimeString("ja-JP", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      });
+      clock.textContent = `${date} ${time}`;
+    }
+
+    updateHeroImage();
+    updateClock();
+    setInterval(updateClock, 1000);
+    setInterval(updateHeroImage, 60000);
+  </script>
 </body>
 </html>
