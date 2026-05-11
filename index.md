@@ -5,10 +5,6 @@ This is a temporary entry point.
 Nothing here is fixed yet.
 This repository is used as a sandbox for future setup.
 
----
-
-# Index
-
 ## Contents
 - [Appendix / 付録](appendix/)
 - [阿部氏ニュース](abeshi-shimbun/)
@@ -26,7 +22,4 @@ Status:
 - Purpose: entry point / test
 
 Last updated: 2026-02
-
-
-
 
