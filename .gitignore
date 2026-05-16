@@ -9,6 +9,10 @@
 *.log
 *.tmp
 
+# Local planning / handoff
+PROJECT_TEMPLATE.md
+THREAD_HANDOFF.md
+
 # Secrets
 .env
 *.key
