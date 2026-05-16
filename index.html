@@ -43,25 +43,36 @@
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
-      gap: 28px;
-      align-items: start;
-      min-height: 72vh;
-      padding-top: 12vh;
+      gap: 12px;
+      align-items: stretch;
+      min-height: 0;
+      padding-top: 6vh;
+      margin-bottom: 24px;
     }
 
     .hero > div {
-      padding: 28px;
+      padding: 20px 18px;
       background: transparent;
     }
 
+    .logo-wrap {
+      position: relative;
+      width: min(100%, 640px);
+    }
+
     .clock {
-      margin: 0 0 14px;
-      color: rgba(248, 251, 253, 0.86);
+      position: absolute;
+      right: 14px;
+      bottom: 12px;
+      margin: 0;
+      padding: 4px 8px;
+      color: rgba(248, 251, 253, 0.9);
       font-family: "Consolas", "SFMono-Regular", "Roboto Mono", monospace;
-      font-size: clamp(1rem, 3vw, 1.35rem);
+      font-size: clamp(0.78rem, 1.4vw, 1rem);
       letter-spacing: 0.08em;
       text-align: right;
-      width: min(100%, 640px);
+      background: rgba(8, 34, 60, 0.36);
+      border-radius: 6px;
     }
 
     .hero .logo {
@@ -74,6 +85,41 @@
       border: 1px solid rgba(191, 211, 220, 0.5);
       border-radius: 8px;
       box-shadow: 0 18px 48px rgba(0, 0, 0, 0.2);
+    }
+
+    .intro {
+      width: min(100%, 640px);
+      margin: 12px 0 0;
+      color: rgba(248, 251, 253, 0.8);
+      font-size: 1rem;
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 16px;
+      width: min(100%, 640px);
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .quick-links a {
+      color: rgba(248, 251, 253, 0.78);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .quick-links a:hover,
+    .quick-links a:focus-visible {
+      color: #f8fbfd;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      outline: none;
     }
 
     h1 {
@@ -93,7 +139,8 @@
 
     .hero img {
       width: 100%;
-      aspect-ratio: 3 / 4;
+      height: 100%;
+      min-height: 0;
       object-fit: cover;
       border: 1px solid rgba(216, 232, 236, 0.9);
       border-radius: 8px;
@@ -174,6 +221,7 @@
         min-height: auto;
         padding-top: 0;
         margin-bottom: 44px;
+        gap: 28px;
       }
 
       .hero > div,
@@ -181,7 +229,23 @@
         padding: 22px;
       }
 
+      .intro {
+        margin-top: 18px;
+      }
+
+      .quick-links {
+        margin-top: 18px;
+      }
+
+      .clock {
+        right: 10px;
+        bottom: 10px;
+        font-size: 0.78rem;
+      }
+
       .hero img {
+        height: auto;
+        aspect-ratio: 3 / 4;
         max-height: 360px;
       }
 
@@ -199,8 +263,23 @@
   <main>
     <section class="hero" aria-labelledby="site-title">
       <div>
-        <p class="clock" id="clock" aria-label="Current date and time">----/--/-- --:--:--</p>
-        <img class="logo" id="site-title" src="assets/logo-studio-web.jpg" alt="Studio Home - A simple public entry point for notes, samples, and related contents.">
+        <div class="logo-wrap">
+          <img class="logo" id="site-title" src="assets/logo-studio-web.jpg" alt="Studio Home - A simple public entry point for notes, samples, and related contents.">
+          <p class="clock" id="clock" aria-label="Current date and time">----/--/-- --:--:--</p>
+        </div>
+        <p class="intro">
+          A small studio entrance for notes, experiments, tools, and playable fragments.<br>
+          It keeps rough ideas close to finished pages.<br>
+          Some rooms are public materials, some are working shelves.<br>
+          Services will grow from small utilities before becoming larger projects.<br>
+          This page is the quiet front door.
+        </p>
+        <ul class="quick-links" aria-label="Quick links">
+          <li><a href="services/">Services</a></li>
+          <li><a href="appendix/">Appendix</a></li>
+          <li><a href="abeshi-shimbun/">阿部氏ニュース</a></li>
+          <li><a href="System_Sample/">System Sample</a></li>
+        </ul>
       </div>
       <img id="hero-image" src="assets/nft-hero-01.webp" alt="Rotating studio image">
     </section>
@@ -208,6 +287,12 @@
     <section class="contents" aria-labelledby="contents-title">
       <h2 id="contents-title">Contents</h2>
       <ul class="links">
+        <li>
+          <a href="services/">
+            <span class="label">Services</span>
+            <span class="note">Small tools and playable utilities.</span>
+          </a>
+        </li>
         <li>
           <a href="appendix/">
             <span class="label">Appendix / 付録</span>

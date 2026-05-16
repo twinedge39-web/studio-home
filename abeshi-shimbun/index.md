@@ -1,2 +1,0 @@
-# ABESHI-SHIMBUN
-- [No00](abeSHI_NEWS00rev2.pdf)
