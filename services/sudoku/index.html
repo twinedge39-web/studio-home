@@ -138,6 +138,11 @@
       background: #edf4f8;
     }
 
+    .solved {
+      color: #17324a;
+      background: #fbfdff;
+    }
+
     .side {
       padding: 18px;
     }
@@ -380,6 +385,7 @@
         cell.value = value ? String(value) : "";
         const given = givenGrid ? givenGrid[r][c] !== 0 : value !== 0;
         cell.classList.toggle("given", given);
+        cell.classList.toggle("solved", Boolean(givenGrid) && !given);
       });
       input.value = formatGrid81(gridToGrid81(grid));
     }
@@ -387,6 +393,7 @@
     function loadInput() {
       const grid = parseGrid81(input.value);
       renderGrid(grid);
+      output.textContent = "Use 0 or . for blank cells. The solver reports one solution or multiple solutions.";
       const givenCount = gridToGrid81(grid).replace(/0/g, "").length;
       setStatus(`Loaded. Given cells: ${givenCount}.`);
     }
@@ -404,7 +411,7 @@
       const uniqueText = solutions.length === 1 ? "Unique solution." : "Multiple solutions detected.";
       const givenCount = gridToGrid81(source).replace(/0/g, "").length;
       setStatus(`${uniqueText} Given cells: ${givenCount}.`);
-      output.textContent = `Solved grid81: ${gridToGrid81(solutions[0])}`;
+      output.textContent = "Solved cells are shown on the board.";
     }
 
     function clearBoard() {

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iPhoneでの文書作成 | Appendix</title>
+  <style>
+    :root {
+      --ink: #101820;
+      --muted: #5e7080;
+      --paper: #f5fbff;
+      --navy: #0b3155;
+      --panel: rgba(245, 251, 255, 0.86);
+      --line: rgba(190, 211, 222, 0.82);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.8;
+      background:
+        linear-gradient(rgba(8, 36, 63, 0.86), rgba(8, 36, 63, 0.86)),
+        url("../assets/gitty-back-staggered.webp") repeat,
+        var(--navy);
+      background-size: auto, 720px 720px, auto;
+    }
+
+    main {
+      width: min(880px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 44px 0 64px;
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: rgba(245, 251, 255, 0.88);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    article {
+      padding: 28px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
+    }
+
+    h1 {
+      margin: 0 0 22px;
+      color: #17324a;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin: 0 0 16px;
+    }
+
+    li ul {
+      margin-top: 6px;
+      color: var(--muted);
+    }
+
+    strong {
+      color: #0b3155;
+    }
+
+    @media (max-width: 720px) {
+      main {
+        width: min(100% - 24px, 560px);
+        padding-top: 30px;
+      }
+
+      article {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav>
+      <a href="../">Studio Home</a>
+      <a href="./">Appendix</a>
+    </nav>
+
+    <article>
+      <h1>暫定まとめ：iPhoneでの文書作成／書類作成法（2026版）</h1>
+
+      <ul>
+        <li><strong>Apple Intelligence が iPhone に付いている</strong>
+          <ul>
+            <li>作文・整形・要約・言い換えができる</li>
+            <li>リッチテキストとMarkdownの変換器として使える</li>
+            <li>つまり実質インポート機能として運用できる</li>
+          </ul>
+        </li>
+        <li><strong>iPhoneは変換器として使える</strong>
+          <ul>
+            <li>文章をiPhoneに通すだけでApple書式に落とせる</li>
+            <li>iPhone単体の編集力不足をAIが補完する</li>
+          </ul>
+        </li>
+        <li><strong>編集は Windows からでも可能</strong>
+          <ul>
+            <li>iCloudを介して、WindowsブラウザからメモやPagesを編集できる</li>
+            <li>ただしApple Intelligenceは基本iPhoneまたは対応Mac側の機能</li>
+          </ul>
+        </li>
+        <li><strong>Apple文書として資産化できる</strong>
+          <ul>
+            <li>Appleフォント前提の見栄えになる</li>
+            <li>メモ／Pages形式で保存され、修正も速い</li>
+            <li>Apple書類資産として蓄積できる</li>
+          </ul>
+        </li>
+        <li><strong>出力が強い</strong>
+          <ul>
+            <li>PagesのPDF出力が綺麗で、そのまま提出物になる</li>
+            <li>メモは共有でテキスト化・搬送が速い</li>
+            <li>Wordを経由せずに完了できる</li>
+          </ul>
+        </li>
+        <li><strong>テンプレ化が効く</strong>
+          <ul>
+            <li>Pagesで雛形を作れば、次回から立ち上げが速い</li>
+            <li>構成の立ち上げコストを削れる</li>
+          </ul>
+        </li>
+        <li><strong>画像運用が強い</strong>
+          <ul>
+            <li>iPhoneで撮影／スクショして、そのまま貼れる</li>
+            <li>手順書・記録・説明資料が作りやすい</li>
+          </ul>
+        </li>
+        <li><strong>音声入力が強い</strong>
+          <ul>
+            <li>粗い入力を作って、Apple Intelligenceで整形すれば文章になる</li>
+            <li>片手や寝ながらの運用でも入力負荷が小さい</li>
+          </ul>
+        </li>
+        <li><strong>原本と閲覧／提出用を分けると事故が減る</strong>
+          <ul>
+            <li>原本：Markdownなど壊れにくい形式</li>
+            <li>提出・閲覧：メモ／Pagesなど綺麗で読みやすい形式</li>
+            <li>変換は万能ではないので、二層構造が安全</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+  </main>
+</body>
+</html>
