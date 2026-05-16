@@ -302,6 +302,11 @@
       return grid.flat().join("");
     }
 
+    function formatGrid81(value) {
+      const s = normalizeGrid(value).padEnd(81, "0").slice(0, 81);
+      return Array.from({ length: N }, (_, r) => s.slice(r * N, r * N + N)).join("\n");
+    }
+
     function candidates(grid, r, c) {
       if (grid[r][c] !== 0) return [];
       const used = new Set();
@@ -363,7 +368,7 @@
 
     function readBoard() {
       const chars = cells.map((cell) => cell.value || "0").join("");
-      input.value = chars;
+      input.value = formatGrid81(chars);
       return parseGrid81(chars);
     }
 
@@ -376,7 +381,7 @@
         const given = givenGrid ? givenGrid[r][c] !== 0 : value !== 0;
         cell.classList.toggle("given", given);
       });
-      input.value = gridToGrid81(grid);
+      input.value = formatGrid81(gridToGrid81(grid));
     }
 
     function loadInput() {
