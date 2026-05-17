@@ -13,6 +13,9 @@
 PROJECT_TEMPLATE.md
 THREAD_HANDOFF.md
 
+# Public-safe publishing workspace
+public_studio_home/
+
 # Secrets
 .env
 *.key
