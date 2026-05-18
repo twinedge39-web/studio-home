@@ -3,15 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Services | Studio Home</title>
+  <title>Audio Samples | Services | Studio Home</title>
   <style>
     :root {
       --ink: #101820;
       --paper: #f5fbff;
-      --muted: #5e7080;
-      --line: rgba(190, 211, 222, 0.82);
+      --muted: #aebfca;
       --navy: #0b3155;
-      --panel: rgba(245, 251, 255, 0.82);
       --panel-dark: rgba(8, 34, 60, 0.76);
       --accent: #74b96d;
     }
@@ -27,13 +25,13 @@
       line-height: 1.7;
       background:
         linear-gradient(rgba(8, 36, 63, 0.86), rgba(8, 36, 63, 0.86)),
-        url("../assets/gitty-back-staggered.webp") repeat,
+        url("../../assets/gitty-back-staggered.webp") repeat,
         var(--navy);
       background-size: auto, 720px 720px, auto;
     }
 
     main {
-      width: min(960px, calc(100% - 32px));
+      width: min(900px, calc(100% - 32px));
       margin: 0 auto;
       padding: 44px 0 64px;
     }
@@ -50,7 +48,7 @@
 
     header {
       max-width: 680px;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
       color: var(--paper);
     }
 
@@ -67,33 +65,20 @@
       font-size: 1.05rem;
     }
 
-    .service-list {
+    .track-list {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
       padding: 0;
       margin: 0;
       list-style: none;
     }
 
-    .service-list a {
-      display: block;
-      min-height: 148px;
-      padding: 20px;
+    .track {
+      padding: 18px;
       color: #d7e5ec;
-      text-decoration: none;
       background: var(--panel-dark);
       border: 1px solid rgba(208, 220, 230, 0.24);
       border-radius: 8px;
-      transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
-    }
-
-    .service-list a:hover,
-    .service-list a:focus-visible {
-      border-color: rgba(245, 251, 255, 0.62);
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
-      transform: translateY(-2px);
-      outline: none;
     }
 
     .status {
@@ -109,17 +94,22 @@
     }
 
     h2 {
-      margin: 0;
+      margin: 0 0 12px;
       color: #f5fbff;
-      font-size: 1.25rem;
+      font-size: 1.12rem;
       letter-spacing: 0;
     }
 
-    .note {
+    audio {
       display: block;
-      margin-top: 8px;
-      color: #aebfca;
-      font-size: 0.95rem;
+      width: 100%;
+      max-width: 660px;
+    }
+
+    .credit {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 0.88rem;
     }
 
     @media (max-width: 720px) {
@@ -127,37 +117,42 @@
         width: min(100% - 24px, 560px);
         padding-top: 30px;
       }
-
-      .service-list {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
 <body>
   <main>
-    <nav><a href="../">Studio Home</a></nav>
+    <nav><a href="../">Services</a></nav>
     <header>
-      <h1>Services</h1>
-      <p class="lead">Small tools and playable utilities from the studio shelf.</p>
+      <h1>Audio Samples</h1>
+      <p class="lead">Gitty found three small sounds on the studio shelf. They seem to have been generated with Suno, and are kept here only as preview samples for the room's atmosphere.</p>
     </header>
 
-    <ul class="service-list">
-      <li>
-        <a href="sudoku/">
-          <span class="status">Draft</span>
-          <h2>Sudoku Solver</h2>
-          <span class="note">Paste an 81-character puzzle, solve it in the browser, and check whether the answer is unique.</span>
-        </a>
+    <ul class="track-list">
+      <li class="track">
+        <span class="status">Sample 01</span>
+        <h2>Cosmic beat fill the zero-G</h2>
+        <audio controls preload="none">
+          <source src="../../assets/music/track01_zero-g.mp3" type="audio/mpeg">
+        </audio>
       </li>
-      <li>
-        <a href="music/">
-          <span class="status">Sample</span>
-          <h2>Audio Samples</h2>
-          <span class="note">Gitty found three small sounds. They seem to have been generated with Suno.</span>
-        </a>
+      <li class="track">
+        <span class="status">Sample 02</span>
+        <h2>Cosmic beat fill the zero-G mod</h2>
+        <audio controls preload="none">
+          <source src="../../assets/music/track02_zero-g-mod.mp3" type="audio/mpeg">
+        </audio>
+      </li>
+      <li class="track">
+        <span class="status">Sample 03</span>
+        <h2>ダンピング・オールナイト</h2>
+        <audio controls preload="none">
+          <source src="../../assets/music/track03_dumping-all-night.mp3" type="audio/mpeg">
+        </audio>
       </li>
     </ul>
+
+    <p class="credit">Music generated with Suno.</p>
   </main>
 </body>
 </html>
