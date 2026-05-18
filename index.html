@@ -51,7 +51,7 @@
     }
 
     .hero > div {
-      padding: 20px 18px;
+      padding: 0 18px 20px;
       background: transparent;
     }
 
@@ -61,18 +61,13 @@
     }
 
     .clock {
-      position: absolute;
-      right: 14px;
-      bottom: 12px;
-      margin: 0;
-      padding: 4px 8px;
-      color: #8295a4;
+      margin: 8px 0 0;
+      padding: 0;
+      color: rgba(248, 251, 253, 0.58);
       font-family: "Consolas", "SFMono-Regular", "Roboto Mono", monospace;
       font-size: clamp(0.78rem, 1.4vw, 1rem);
       letter-spacing: 0.08em;
       text-align: right;
-      background: rgba(8, 34, 60, 0.48);
-      border-radius: 6px;
     }
 
     .hero .logo {
@@ -81,10 +76,11 @@
       height: auto;
       aspect-ratio: auto;
       object-fit: contain;
-      opacity: 0.5;
-      border: 1px solid rgba(191, 211, 220, 0.5);
-      border-radius: 8px;
-      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.2);
+      opacity: 0.72;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.26));
     }
 
     .intro {
@@ -238,8 +234,6 @@
       }
 
       .clock {
-        right: 10px;
-        bottom: 10px;
         font-size: 0.78rem;
       }
 
@@ -264,7 +258,7 @@
     <section class="hero" aria-labelledby="site-title">
       <div>
         <div class="logo-wrap">
-          <img class="logo" id="site-title" src="assets/pictures/site/logo-studio-web.jpg" alt="Studio Home - A simple public entry point for notes, samples, and related contents.">
+          <img class="logo" id="site-title" src="assets/pictures/site/logo-studio-home-transparent-20260518.png" alt="Studio Home - A simple public entry point for notes, samples, and related contents.">
           <p class="clock" id="clock" aria-label="Current date and time">----/--/-- --:--:--</p>
         </div>
         <p class="intro">
