@@ -322,6 +322,7 @@
   <script>
     const clock = document.getElementById("clock");
     const heroImage = document.getElementById("hero-image");
+    const siteLogo = document.getElementById("site-title");
     const heroImages = [
       "assets/pictures/site/nft-hero-01.webp",
       "assets/pictures/site/gitty-hero-01.webp",
@@ -336,10 +337,18 @@
       "assets/pictures/site/nft-hero-06.webp",
       "assets/pictures/site/gitty-hero-06.webp"
     ];
+    const logoOpacities = [0.64, 0.72, 0.78];
 
     function updateHeroImage() {
       const index = new Date().getHours() % heroImages.length;
       heroImage.src = heroImages[index];
+    }
+
+    function updateLogoOpacity() {
+      const now = new Date();
+      const slot = (now.getDate() * 48) + (now.getHours() * 2) + Math.floor(now.getMinutes() / 30);
+      const index = (slot * 7 + 3) % logoOpacities.length;
+      siteLogo.style.opacity = logoOpacities[index];
     }
 
     function updateClock() {
@@ -358,9 +367,11 @@
     }
 
     updateHeroImage();
+    updateLogoOpacity();
     updateClock();
     setInterval(updateClock, 1000);
     setInterval(updateHeroImage, 60000);
+    setInterval(updateLogoOpacity, 60000);
   </script>
 </body>
 </html>
