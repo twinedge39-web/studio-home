@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atlas Cloud Workflow：動画生成の参考メモ | Appendix</title>
+  <style>
+    :root {
+      --ink: #101820;
+      --paper: #f5fbff;
+      --navy: #0b3155;
+      --panel: rgba(245, 251, 255, 0.9);
+      --line: rgba(190, 211, 222, 0.82);
+      --muted: #5e7080;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.85;
+      background:
+        linear-gradient(rgba(8, 36, 63, 0.86), rgba(8, 36, 63, 0.86)),
+        url("../assets/pictures/site/gitty-back-staggered.webp") repeat,
+        var(--navy);
+      background-size: auto, 720px 720px, auto;
+    }
+
+    main {
+      width: min(840px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 44px 0 64px;
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    nav a,
+    .source-link {
+      color: rgba(245, 251, 255, 0.88);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    nav a:hover,
+    nav a:focus-visible,
+    .source-link:hover,
+    .source-link:focus-visible {
+      color: #f5fbff;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      outline: none;
+    }
+
+    article {
+      padding: 30px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
+    }
+
+    h1 {
+      margin: 0 0 24px;
+      color: #17324a;
+      font-size: clamp(1.8rem, 6vw, 3.4rem);
+      line-height: 1.16;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+
+    h2 {
+      margin: 34px 0 14px;
+      color: #17324a;
+      font-size: 1.35rem;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 1.2em;
+    }
+
+    a {
+      color: #164e73;
+    }
+
+    code {
+      font-family: "Consolas", "SFMono-Regular", "Roboto Mono", monospace;
+      font-size: 0.92rem;
+      overflow-wrap: anywhere;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 18px 0 24px;
+      border: 1px solid rgba(11, 49, 85, 0.2);
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 600px;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.48);
+    }
+
+    th,
+    td {
+      padding: 11px 13px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid rgba(11, 49, 85, 0.14);
+    }
+
+    th {
+      color: #17324a;
+      background: rgba(191, 211, 220, 0.42);
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    hr {
+      margin: 30px 0;
+      border: 0;
+      border-top: 1px solid rgba(11, 49, 85, 0.18);
+    }
+
+    .source {
+      margin: 20px 0 0;
+      color: rgba(245, 251, 255, 0.72);
+      font-size: 0.92rem;
+      text-align: right;
+    }
+
+    .fine-print {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 720px) {
+      main {
+        width: min(100% - 24px, 560px);
+        padding-top: 30px;
+      }
+
+      article {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav>
+      <a href="../">Studio Home</a>
+      <a href="./">Appendix</a>
+    </nav>
+
+    <article>
+      <h1>Atlas Cloud Workflow：動画生成の参考メモ</h1>
+
+      <p>Atlas CloudのWorkflow機能をアンロックしてみたところ、動画生成用のAPIも用意されていた。動画生成の選択肢を探す際の参考として、確認した内容を残しておく。</p>
+
+      <h2>APIから取得できるもの</h2>
+
+      <p>Workflow StudioにはAPIの案内があり、Workflowの一覧と、それぞれの入力項目・設定条件を示すスキーマを取得できる。</p>
+
+      <p>接続先は <code>https://api.atlascloud.ai</code>。手元のAPIキーを使ったBearer認証で、次の取得を確認した。</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>内容</th>
+              <th>API</th>
+              <th>確認結果</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Workflowの一覧</td>
+              <td><code>GET /api/v1/workflows</code></td>
+              <td>58件を取得</td>
+            </tr>
+            <tr>
+              <td>個別Workflowのスキーマ</td>
+              <td><code>GET /api/v1/workflows/{workflow_name}</code></td>
+              <td>Seedance 2.0のReference to Videoで取得成功</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>個別スキーマの取得に使ったWorkflow名は <code>seedance-2.0-reference-to-video-workflow</code>。どちらもHTTP 200で応答した。</p>
+
+      <h2>スキーマの内容</h2>
+
+      <p>個別Workflowの応答には、<code>input_schema</code>（入力仕様）、<code>output_schema</code>（出力仕様）、<code>models</code>、<code>example</code>、<code>examples</code>、<code>nodes</code>、<code>edges</code>などが含まれていた。</p>
+
+      <p>Seedance 2.0のReference to Videoでは、次のような入力項目と条件を確認できた。</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>入力項目</th>
+              <th>内容・設定例</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>prompt</code></td><td>動画の指示文</td></tr>
+            <tr><td><code>reference_images</code></td><td>参照画像。最大9枚</td></tr>
+            <tr><td><code>reference_videos</code></td><td>参照動画。最大3本、合計15秒以下</td></tr>
+            <tr><td><code>reference_audio</code></td><td>参照音声</td></tr>
+            <tr><td><code>duration</code></td><td>動画の長さ。4〜15秒の指定など</td></tr>
+            <tr><td><code>ratio</code></td><td><code>16:9</code>、<code>9:16</code>、<code>1:1</code>などの比率</td></tr>
+            <tr><td><code>resolution</code></td><td><code>480p</code>、<code>720p</code>、<code>1080p</code></td></tr>
+            <tr><td><code>generate_audio</code></td><td>音声生成の有無</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>このほか、透かしや最終フレームの返却に関する項目もあった。表は取得時のスキーマの抜粋で、すべての条件を載せたものではない。参照動画の上限は画面表示とスキーマに違いがあったため、ここではスキーマ側の値を記している。</p>
+
+      <h2>動画生成の呼び出し</h2>
+
+      <p>APIの案内では、生成の送信先は <code>POST /api/v1/model/generateVideo</code>、結果の照会先は <code>GET /api/v1/model/prediction/{id}</code> となっていた。</p>
+
+      <p>Reference to Videoの場合、生成時に指定するモデルIDは <code>atlascloud/workflow/seedance-2.0/reference-to-video</code>。スキーマ取得に使うWorkflow名とは別になっている。</p>
+
+      <p>生成リクエストの送り方まで用意されているが、今回確認したのは案内の内容と一覧・スキーマの取得までで、API経由のWorkflow動画生成はまだ試していない。</p>
+
+      <hr>
+
+      <p class="fine-print">確認日：2026年9月1日<br>
+      参照先：<a href="https://www.atlascloud.ai/ja/console/workflow/studio">Atlas Cloud Workflow Studio</a></p>
+
+      <p class="fine-print">アンロック済みアカウントで確認した個人のメモです。アンロック条件や他のアカウントでの利用可否は調べていません。仕様は確認当時のもので、利用時には最新の案内・スキーマを確認してください。</p>
+    </article>
+
+    <p class="source"><a class="source-link" href="../assets/fragments/atlascloud-workflow-video.md">Markdown source</a></p>
+  </main>
+</body>
+</html>
