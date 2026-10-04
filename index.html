@@ -34,11 +34,6 @@
       background-size: auto, 720px 720px, auto;
     }
 
-    main {
-      width: min(920px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 40px 0 56px;
-    }
 
     .hero {
       display: grid;
@@ -46,7 +41,7 @@
       gap: 12px;
       align-items: stretch;
       min-height: 0;
-      padding-top: 6vh;
+      padding-top: 20px;
       margin-bottom: 24px;
     }
 
@@ -172,7 +167,7 @@
       display: block;
       min-height: 86px;
       padding: 18px;
-      color: #8295a4;
+      color: #d4e2ec;
       text-decoration: none;
       background: rgba(8, 34, 60, 0.72);
       border: 1px solid rgba(208, 220, 230, 0.2);
@@ -196,7 +191,7 @@
     .note {
       display: block;
       margin-top: 4px;
-      color: #8295a4;
+      color: #b7cbdc;
       font-size: 0.92rem;
     }
 
@@ -207,10 +202,6 @@
     }
 
     @media (max-width: 720px) {
-      main {
-        width: min(100% - 24px, 560px);
-        padding-top: 28px;
-      }
 
       .hero {
         grid-template-columns: 1fr;
@@ -222,7 +213,7 @@
 
       .hero > div,
       .contents {
-        padding: 22px;
+        padding: 16px;
       }
 
       .intro {
@@ -252,9 +243,10 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="assets/styles/studio.css">
 </head>
 <body>
-  <main>
+  <main class="studio-page">
     <section class="hero" aria-labelledby="site-title">
       <div>
         <div class="logo-wrap">
@@ -262,12 +254,9 @@
           <p class="clock" id="clock" aria-label="Current date and time">----/--/-- --:--:--</p>
         </div>
         <p class="intro">
-          Gitty found a small forgotten studio somewhere between storage shelves and unfinished experiments.<br>
-          Inside are notes, tiny tools, playable fragments, and half-built ideas left on old workbenches.<br>
-          Some rooms contain public materials.<br>
-          Some are still active shelves full of ongoing work.<br>
-          Small utilities may slowly grow into larger projects over time.<br>
-          This page is the quiet front door to that studio.
+          Gitty found a quiet studio filled with notes, tiny tools, and unfinished experiments.<br>
+          Some shelves hold things to read, play, or listen to; others are still taking shape.<br>
+          Open a door below and see what he has gathered.
         </p>
         <ul class="quick-links" aria-label="Quick links">
           <li><a href="services/">Services</a></li>
@@ -316,7 +305,7 @@
     </section>
 
     <footer>
-      Last updated: 2026-05
+      Last updated: 2026-10-04
     </footer>
   </main>
   <script>

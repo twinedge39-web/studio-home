@@ -23,7 +23,7 @@
     body {
       min-height: 100vh;
       margin: 0;
-      padding: 32px 16px 56px;
+      padding: 0;
       background:
         linear-gradient(rgba(8, 36, 63, 0.86), rgba(8, 36, 63, 0.86)),
         url("../assets/pictures/site/gitty-back-staggered.webp") repeat,
@@ -32,10 +32,6 @@
       background-attachment: fixed;
     }
 
-    .page {
-      width: min(960px, 100%);
-      margin: 0 auto;
-    }
 
     nav {
       margin-bottom: 20px;
@@ -63,7 +59,6 @@
 
     @media (max-width: 640px) {
       body {
-        padding: 20px 12px 40px;
         background-size: auto, 540px 540px, auto;
       }
 
@@ -73,9 +68,10 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="../assets/styles/studio.css">
 </head>
 <body>
-  <main class="page">
+  <main class="studio-page">
     <nav><a href="./">← System Sample</a></nav>
     <pre id="prompt"># System Prompt (汎用) : 井手（イデー）標準
 

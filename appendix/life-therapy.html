@@ -29,11 +29,6 @@
       background-size: auto, 720px 720px, auto;
     }
 
-    main {
-      width: min(840px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 44px 0 64px;
-    }
 
     nav {
       display: flex;
@@ -116,19 +111,16 @@
     }
 
     @media (max-width: 720px) {
-      main {
-        width: min(100% - 24px, 560px);
-        padding-top: 30px;
-      }
 
       article {
         padding: 22px;
       }
     }
   </style>
+  <link rel="stylesheet" href="../assets/styles/studio.css">
 </head>
 <body>
-  <main>
+  <main class="studio-page">
     <nav>
       <a href="../">Studio Home</a>
       <a href="./">Appendix</a>
